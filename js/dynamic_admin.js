@@ -211,6 +211,8 @@ function editBtnLocalStorageListerner() {
             let ansDiv = document.getElementById(key)
             ansDiv.querySelector("textarea").value = targetQuizItem.ansObj[key]
         }
+
+        $("#ansSelect").val(targetQuizItem.correctAnsLetter);
         $("#qid").val(id)
         setPubButtonToUpdate(this)
     })
