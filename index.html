@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Quiz</title>
-
+    <link rel="icon" href="img/quiz-icon.svg">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -29,15 +29,27 @@
     <header>
         <div class="container px-4 text-center">
             <img src="img/qqq.png" class="img-fluid" style="width:800px;height:200;">
-            <p class="lead">Free Quiz! Support Flexible Answer Choices! </p>
-            <a class="btn btn-lg btn-info" href="admin.html">Add Quiz Questions Now </a>
+            <p class="lead">Free Quiz! Support Flexible Choices! </p>
+            <p class="lead">Welcome to propose new feature or bug! </p>
         </div>
+        <div class="container px-4 text-center mt-2">
+            <a class="btn btn-lg btn-success" href="admin.html">Add Quiz Questions Now</a>
+        </div>
+        <div class="container px-4 text-center mt-2">
+            <a class="btn btn-lg btn-info" href="quiz.html">Take Quiz Now</a>
+        </div>
+        <div class="container px-4 text-center mt-2">
+            <a class="btn btn-lg btn-warning" href="quickquiz.html">Take Random Short Quiz Now</a>
+        </div>
+ 
     </header>
 
+    <div id="footer-placeholder"></div>
 </body>
 <script>
     $(function () {
         $("#nav-placeholder").load("nav.html");
+        $("#footer-placeholder").load("footer.html");
     });
 </script>
 </html>

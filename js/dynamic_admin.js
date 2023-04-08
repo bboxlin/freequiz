@@ -281,3 +281,24 @@ function animate(component) {
         component.style.display = "none";
     }, 2000);
 }
+
+function exportButtonListern(key) {
+    $('#' + key).click(function() {
+        // Stringify localStorage data
+        const localStorageData = JSON.stringify(localStorage);
+
+        // Create a Blob with the localStorage data
+        const blob = new Blob([localStorageData], {type: 'application/json'});
+
+        // Create a temporary anchor element to trigger the download
+        const downloadLink = document.createElement('a');
+        downloadLink.href = window.URL.createObjectURL(blob);
+        downloadLink.download = 'localStorage.json';
+
+        // Trigger the download by appending the anchor to the document and simulating a click
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+
+    })
+}
