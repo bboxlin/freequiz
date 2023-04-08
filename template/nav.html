@@ -23,30 +23,32 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Free Quiz</a>
+        <a class="navbar-brand" href="../index.html">Free Quiz</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="quiz.html">General Quiz</a>
-                <a class="nav-item nav-link" href="quickquiz.html">Quick Quiz</a>
-                <a class="nav-item nav-link" href="admin.html">Admin</a>
-                <a class="nav-item nav-link" href="recentupdate.html">Recent Updates</a>
+                <a class="nav-item nav-link" href="../pages/quiz.html">General Quiz</a>
+                <a class="nav-item nav-link" href="../pages/quickquiz.html">Quick Quiz</a>
+                <a class="nav-item nav-link" href="../pages/admin.html">Admin</a>
+                <a class="nav-item nav-link" href="../pages/recentupdate.html">Recent Updates</a>
             </div>
         </div>
     </nav>
 
     <script>
         $(document).ready(function () {
-            // Get the current URL
-            var url = window.location.href;
+            let currentPath = window.location.pathname.split('/').pop();
+     
+            // Iterate through the nav items
+            $('.navbar-nav .nav-link').each(function () {
+                let navItemPath = $(this).attr('href').split('/').pop();
 
-            // Add the "active" class to the corresponding nav link
-            $(".nav-item").each(function () {
-                if (url.includes($(this).attr("href"))) {
-                    $(this).addClass("active");
+                // If the nav item's path matches the current path, add the 'active' class
+                if (navItemPath === currentPath) {
+                    $(this).addClass('active');
                 }
             });
 
