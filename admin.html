@@ -61,19 +61,36 @@
     <div id="nav-placeholder"></div>
 
     <div class="container mt-4">
+        <div class="row">
+            <div class="col-sm-10 mx-auto">
+                <div class="card">
+                    <h5 class="card-header">Import File Warning</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Supported txt and json insert!</h5>
+                        <p class="card-text"> 
+                            To learn the format, download the quiz! Illegal format will not insert properly, I will 
+                            handle the illegal format exceptions in the future!
+                        </p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
         <!-- file loader -->
         <div class="row">
             <div class="col-sm-10 mx-auto d-flex justify-content-between">
                 <div class="d-flex align-items-center">
                     <b>Download Quiz:</b>
-                    <select class="form-select" aria-label=".form-select-lg example" id="languages-download">
+                    <select class="form-select" aria-label=".form-select-lg example" id="downloadtype">
                         <option selected value="json">json</option>
                         <option value="txt">txt</option>
                     </select>
                     <a id="download" href="#"><img src="img/download.png" width="30" height="30"></a>
                 </div>
                 <div class="d-flex align-items-center">
-                    <input class="form-control" type="file" id="jsonFileInput" accept="application/json" />
+                    <a id="clearFile" href="#"><img src="img/refresh.png" width="30" height="30"></a>
+                    <input class="form-control" type="file" id="fileInput" accept="application/json, text/plain" />
                     <a id="update" href="#"><img src="img/upload.png" width="30" height="30"></a>  
                 </div>
             </div>
@@ -143,7 +160,8 @@
         admin.addAnswerBtnClickBind("addAnsBtn")
         admin.publishButtonBind("pubBtn")
         exportButtonListener("download")
-
+        importButtonListener("update")
+        clearFileListener("clearFile")
      </script>
 
 </body>
