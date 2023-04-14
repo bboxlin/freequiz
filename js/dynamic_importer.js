@@ -11,6 +11,10 @@ function importButtonListener(id) {
             alert('Please choose a file.');
             return;
         }
+        // if key not exist, create this key value store.
+        if (!localStorage.getItem('quizData')) {
+            localStorage.setItem("quizData", JSON.stringify([]))
+        }
         const reader = new FileReader();
         reader.onload = function(e) {
             const importedData = e.target.result
@@ -41,7 +45,7 @@ function insertTXTtoLocalStorage(data) {
             return // same as continue in traditional for loop
         }
         // quizItemList = [question, A_choice, B_choice, ....., letter of answer]
-        const id = new Date()
+        const id = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
         const question = parseTxtQuestion(quizItemList[0])
         if (!exitingQuestionNames.has(question)) {
             const ansobj = parseTxtChoices(quizItemList)
